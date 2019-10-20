@@ -18,9 +18,34 @@
 
     -----------------------------------------------------------------------------------------------------------------------
     -----------------------------------------------------------------------------------------------------------------------
+*/
 
+function calculadora(n1, n2) {
+  let operacion = prompt(
+    'Introducir: "+" para sumar, "-" para restar, "*" para multiplicar, "/" para dividir y "**" para elevar a la potencia'
+  );
+  switch (operacion) {
+    case "+":
+      return +n1 + +n2;
+      break;
+    case "-":
+      return +n1 - +n2;
+      break;
+    case "*":
+      return +n1 * +n2;
+      break;
+    case "/":
+      return +n1 / +n2;
+      break;
+    case "**":
+      return Math.pow(+n1, +n2);
+      break;
+  }
+}
 
-    * * * * * * * * * * * * * * * * * * * * *
+console.log(calculadora(prompt("n1"), prompt("n2")));
+
+/*    * * * * * * * * * * * * * * * * * * * * *
     *  2. D A D O   E L E C T R Ó N I C O   *
     * * * * * * * * * * * * * * * * * * * * *
      
@@ -36,9 +61,23 @@
 
     -----------------------------------------------------------------------------------------------------------------------
     -----------------------------------------------------------------------------------------------------------------------
+*/
 
+function dadoElectronico() {
+  let totalScore = 0;
+  while (totalScore < 50) {
+    let tirada = prompt("Pulsa OK para tirar el dado"); //Uso el prompt para simular el acto de tirar el dado
+    tirada = Math.ceil(Math.random() * 6);
+    totalScore = totalScore + tirada;
+    console.log(
+      `Puntuación tirada: ${tirada} - Puntuación acumulada: ${totalScore}`
+    );
+  }
+  return alert("Fin de la partida");
+}
+dadoElectronico();
 
-    * * * * * * * * * * * * * * * * * * * * * * *
+/*    * * * * * * * * * * * * * * * * * * * * * * *
     *  3. R E G I S T R O   A C A D É M I C O   *
     * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -65,3 +104,22 @@
     -----------------------------------------------------------------------------------------------------------------------
 
 */
+
+class Person {
+  constructor(name, age, gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+
+class Student extends Person {
+  constructor(name, age, gender, subject, group, studentsList) {
+    super(name);
+    super(age);
+    super(gender);
+    this.subject = subject;
+    this.group = group;
+    this.studentsList = studentList;
+  }
+}
